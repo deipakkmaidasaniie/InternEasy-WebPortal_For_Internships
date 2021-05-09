@@ -32,7 +32,7 @@ app.use(express.static('public'));
 
 //connect to mongodb
 var DB;
-var DB_URL = process.env.DB_URL || 'mongodb://127.0.0.1:27017/interneasy';
+var DB_URL = process.env.DB_URL || 'mongodb+srv://deepak:Deepak17@cluster0.gr8gw.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
 
 var mongoClient = new mongodb.MongoClient(DB_URL, {useNewUrlParser: true});
 mongoClient.connect(function(err) {
