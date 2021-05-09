@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>interneasy.com - Student Dashboard</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="CSS/studentDashboard.css">
+        <link rel="stylesheet" href="CSS/internships-style.css">
+        <link rel="stylesheet" href="CSS/index_css.css">
+        
+
+</head>
+<body>
+    <div style="background-color: lightskyblue;">
+    <div class="header" style="width:100%">
+        <a href="#default" class="logo">InternEasy</a>
+        <div class="header-right">
+          <a href="/studentDash">Home</a>
+          <a href="/studentProfile">View Profile</a>
+          <a href="/studentProfileForm">Edit Profile</a>
+          <a href="/studentLogout">Logout</a>
+      
+        </div>
+      </div>
+
+    <p></p>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-9">
+                <form class="form-inline">
+                    <div class="form-group mb-2">
+                        <label class="sr-only">search</label>
+                        <input type="text" class="form-control form-control-lg" id="inputSearch" name="searchJobs" placeholder="Search Internships by skills, designation etc.">
+                    </div>
+                    <button type="submit" class="btn btn-secondary mx-sm-5 mb-2">Search</button>
+                </form>
+                    <button class="btn btn-secondary mx-sm-5 mb-2">Recommended Internships</button>
+                {{#each jobs}}
+                 
+                          <div class="internships">
+                <div class="card">
+            <div class="intern-title">
+                <div class="job-title">
+                    <p>{{jobTitle}}</p>
+                </div>
+                <div class="company-name">
+                    <p style="padding: 10px;">Name of the company</p>
+                </div>
+                <div class="place">
+                    <h3>{{location}}</h3>
+                </div>
+            </div>
+            <div class="intern-desc">
+                <div class="start-date">
+                    <span class="label">START DATE</span><br>
+                    <h3>{{startdate}}</h3>
+                </div>
+                <div class="last-date">
+                    <span class="label">APPLY BY</span><br>
+                    <h3>{{applyby}}</h3>
+                </div>
+                <div class="stipend">
+                    <span class="label">STIPEND</span><br>
+                    <h3>{{stipend}}</h3>
+                </div>
+                <div class="duration">
+                    <span class="label">DURATION</span><br>
+                   <h3>{{duration}}</h3>
+                </div>
+            </div>
+
+            <div class="apply">
+             <a class="btn btn-secondary" href="/studentApply/{{_id}}">APPLY</a>  
+            </div>
+        </div>
+        </div>
+                    
+                    
+{{/each}}
+                                {{#each jobs}}
+                                <a class="btn btn-secondary" href="/studentApply/{{_id}}">  
+                                    {{jobTitle}} &nbsp; &nbsp;  {{keySkills}} &nbsp; &nbsp; {{location}} 
+                                </a>
+                                <p></p>
+                                {{/each}}
+                           
+            </div>
+
+            <div class="offset-md-1 col-md-2" id="profilePic">
+                <img style="margin-top: 55px" src="{{student.imagePath}}" alt="" height="180px" width="180px">
+
+                <h4>{{student.name}}</h4>
+            </div>
+
+        </div>
+            
+            </div>
+            </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>
