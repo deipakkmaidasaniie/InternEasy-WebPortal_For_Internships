@@ -80,7 +80,8 @@ body {
     font-family:Verdana, Geneva, Tahoma, sans-serif;
     font-weight: bold;
     width:600px;
-    color:brown;
+    color:black;
+    background-color:white;
   }
   #about{
     background-image: url("../Images/main2.jpg");

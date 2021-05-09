@@ -10,6 +10,7 @@ var postData = function(request, response) {
     var confirmPassword = request.body.confirmPassword;
 
     var user = {
+        FullName: request.body.name,
         phone: request.body.phone,
         designation: request.body.designation,
         organization: request.body.organization,

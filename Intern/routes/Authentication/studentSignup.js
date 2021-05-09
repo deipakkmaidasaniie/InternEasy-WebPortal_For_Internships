@@ -24,35 +24,7 @@ var postData = function(request, response) {
             } 
             else {
 
-                if (Notification.permission === "granted") {
-                    showNotification();
-                }
-    
-                else if (Notification.permission != "denied") {
-                    Notification.requestPermission().then(permission => {
-                        if (permission === "granted" && flag === 1) {
-                            showNotification();
-                        }
-    
-                    })
-                }
-    
-                 function showNotification() {
-                    const notification = new Notification("New message from Deepak!", {
-                        body: "Hey! You have selected a great list of fruits.",
-                        icon: "fruits.jpg"
-                    });
-                    notification.onclick = function () {
-                        alert("Notification clicked!"),
-                            window.open("http://google.com")
-                          //  showNotification();
-                    };                
-                
-                    //notification.close();
-                    setTimeout(notification.close.bind(notification), 7000); 
-    
-                }
-            
+                            
                 request.session.user = null;
                 response.redirect("/");
             }

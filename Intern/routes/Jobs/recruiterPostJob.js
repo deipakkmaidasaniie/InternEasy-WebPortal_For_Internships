@@ -18,6 +18,10 @@ var postData = function(request, response) {
     var desiredCandidates = request.body.desiredCandidates;
     var orgProfile = request.body.organizationProfile;
     var recruiterId = request.session.user._id;
+    var stipend = request.body.stipend;
+    var duration = request.body.duration;
+    var startdate = request.body.startdate;
+    var applyby = request.body.applyby ; 
 
     var data = {
         jobTitle: jobTitle,
@@ -26,7 +30,11 @@ var postData = function(request, response) {
         location: location,
         desiredCandidates: desiredCandidates,
         orgProfile: orgProfile,
-        recruiterId : recruiterId
+        recruiterId : recruiterId,
+        stipend: stipend,
+        duration: duration,
+        startdate : startdate,
+        applyby: applyby
     }
 
     DB.collection("recruiterPostJobs").insertOne(data, function(error, result){
