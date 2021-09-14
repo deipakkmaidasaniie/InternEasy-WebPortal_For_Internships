@@ -31,7 +31,7 @@ npm start
 
 ## Features:
 
-- Recruiter:
+Recruiter:
 - Can Add Internship along with all the necessary details like about the internship, skills required, stipend , location and so on.
 - Can View all the applicants
 - Can Accept or reject the applicant. If he accept, the mail will be sent to the applicant on his registered mail id and status will be updated to selected in the database.
@@ -39,7 +39,7 @@ npm start
 - Can edit his profile
 
 
-- Student:
+Student:
 - Can Apply for the internships based on his preference( skills, location, duration, stipend)
 - Can view the status of all the internships he applied to
 - Can edit his profile
